@@ -5,7 +5,8 @@ console.log(referer);
 if (referer) {
 	cookies.set("last-referer", referer, { path: "/" });
 }
-return redirect("http://localhost:4322/api/auth/redirector");
+
+return redirect("/api/auth/redirector");
 ---
 
 hello auth

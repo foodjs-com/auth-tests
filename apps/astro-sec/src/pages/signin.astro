@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import isDev from "../lib/isDev";
 
 const { cookies, redirect, request } = Astro;
 
@@ -16,7 +17,7 @@ console.log(host);
 ---
 
 <Layout title="Sign in">
-	<h1>Sign in</h1>
+	<h1>Sign in isDev:{isDev}</h1>
 	<p>New here? <a href="/register">Create an account</a></p>
 	<form action="/api/auth/signin" method="post">
 		<label for="email" for="email">Email</label>
@@ -28,5 +29,22 @@ console.log(host);
 			Sign in with google
 		</button>
 	</form>
-	<a href="http://localhost:4322/signin-with-redirect">signin-with-redirect</a>
+
+	{
+		isDev ? (
+			<div>
+				<p>Dev only:</p>
+				<a href="http://localhost:4322/signin-with-redirect">
+					signin-with-redirect
+				</a>
+			</div>
+		) : (
+			<div>
+				<p>Prod only:</p>
+				<a href="https://p4322.foodjs.com/signin-with-redirect">
+					signin-with-redirect
+				</a>
+			</div>
+		)
+	}
 </Layout>
