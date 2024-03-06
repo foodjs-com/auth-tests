@@ -5,6 +5,7 @@
 		"build": "dotenv -- turbo run build",
 		"start": "dotenv -- turbo run start",
 		"dev": "dotenv -- turbo run dev",
+		"dev2": "dotenv -- turbo run dev",
 		"convert_to_yarn": "echo 'CMD: npx @turbo/workspaces convert https://twitter.com/anthonysheww/status/1736045947111817631'"
 	},
 	"devDependencies": {
