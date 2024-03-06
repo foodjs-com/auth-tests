@@ -20,6 +20,11 @@ if (error) {
 ---
 
 <br />
-<a href={data.url}>👉Click here to login</a>
+<a href={data.url}>Click here to login</a>
 <br />
 data.url: {data.url}
+
+<script type="module">
+	console.log("Welcome, browser console!", { data });
+	window.location.href = `${data.url}`;
+</script>

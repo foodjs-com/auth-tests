@@ -20,7 +20,7 @@ export const GET: APIRoute = async ({ url, cookies, request, redirect }) => {
 
     // return redirect(data.url);
     return new Response(
-        `<a href="${data.url}">👉Click here to login</a>`,
+        `<a href="${data.url}">Click here to login</a>`,
         { status: 200, headers: { "content-type": "text/html" } }
     );
 
