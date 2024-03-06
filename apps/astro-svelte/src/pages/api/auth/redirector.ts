@@ -18,7 +18,11 @@ export const GET: APIRoute = async ({ url, cookies, request, redirect }) => {
         return new Response(error.message, { status: 500 });
     }
 
-    return redirect(data.url);
+    // return redirect(data.url);
+    return new Response(
+        `<a href="${data.url}">👉Click here to login</a>`,
+        { status: 200 }
+    );
 
 
 };
