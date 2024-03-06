@@ -3,6 +3,10 @@ import { supabase } from "../../../lib/supabase";
 import isDev from "../../../lib/isDev";
 
 export const GET: APIRoute = async ({ url, cookies, request, redirect }) => {
+    const referer = request.headers.get("referer");
+    if (referer) {
+        cookies.set("last-referer", referer, { path: "/" });
+    }
     const { data, error } = await supabase.auth.signInWithOAuth({
         provider: "google",
         options: {
