@@ -20,11 +20,13 @@ if (error) {
 ---
 
 <br />
-<a href={data.url}>Click here to login</a>
+<a id="redirector" href={data.url}>Click here to login</a>
 <br />
-data.url: {data.url}
+<div data-url={data.url}></div>
 
 <script type="module">
-	console.log("Welcome, browser console!", { data });
-	window.location.href = `${data.url}`;
+	// window.location.href = document
+	// 	.querySelector("div[data-url]")
+	// 	.getAttribute("data-url");
+	document.getElementById("redirector").click();
 </script>
