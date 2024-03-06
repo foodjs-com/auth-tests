@@ -10,7 +10,8 @@ if (referer) {
 const { data, error } = await supabase.auth.signInWithOAuth({
 	provider: "google",
 	options: {
-		redirectTo: `${isDev ? "http://localhost:4322" : "https://manuth4322.foodjs.com"}/api/auth/callback`,
+		// redirectTo: `${isDev ? "http://localhost:4322" : "https://manuth4322.foodjs.com"}/api/auth/callback`,
+		redirectTo: `${isDev ? "http://localhost:4322" : "https://manuth4322.foodjs.com"}/callback`,
 	},
 });
 
@@ -20,13 +21,10 @@ if (error) {
 ---
 
 <br />
-<a id="redirector" href={data.url}>Click here to login</a>
+<a id="redirector" href={data.url}>Click here</a>
 <br />
 <div data-url={data.url}></div>
 
 <script type="module">
-	// window.location.href = document
-	// 	.querySelector("div[data-url]")
-	// 	.getAttribute("data-url");
 	document.getElementById("redirector").click();
 </script>
