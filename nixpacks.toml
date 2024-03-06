@@ -1,5 +1,8 @@
+[phases.setup]
+cmds = ['pnpm i']
+
 [phases.build]
-cmds = ['pnpm build']
+cmds = ['dotenv -- pnpm build']
 
 [start]
-cmd = 'pnpm start'
+cmd = 'dotenv -- pnpm start'
