@@ -10,7 +10,7 @@ export const GET: APIRoute = async ({ url, cookies, request, redirect }) => {
     const { data, error } = await supabase.auth.signInWithOAuth({
         provider: "google",
         options: {
-            redirectTo: `${isDev ? 'http://localhost:4322' : 'https://auth4322.foodjs.com'}/api/auth/callback`
+            redirectTo: `${isDev ? 'http://localhost:4322' : 'https://manuth4322.foodjs.com'}/api/auth/callback`
         },
     });
 
@@ -21,7 +21,7 @@ export const GET: APIRoute = async ({ url, cookies, request, redirect }) => {
     // return redirect(data.url);
     return new Response(
         `<a href="${data.url}">👉Click here to login</a>`,
-        { status: 200 }
+        { status: 200, headers: { "content-type": "text/html" } }
     );
 
 
