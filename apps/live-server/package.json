@@ -4,7 +4,8 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"_dev": "live-server --port=3000 --host=mylocal.com --open=public/index.html --watch=public"
+		"_dev": "live-server --port=3000 --host=mylocal.com --open=public/index.html --watch=public",
+		"start": "live-server --port=3000"
 	},
 	"keywords": [],
 	"author": "",
